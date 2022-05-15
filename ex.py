@@ -1,4 +1,3 @@
-from matplotlib.pyplot import close
 from packages import kline
 
 # GMOコインの現在のローソク足を取得する関数
