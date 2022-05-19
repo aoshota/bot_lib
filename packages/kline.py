@@ -49,7 +49,8 @@ def get_closes_gmo(symbol,interval,quantity,decimal=False):
 		cnt -= 1
 		if cnt == 0: break
 	if cnt != 0:
-		now_date - datetime.timedelta(days=1)
+		now_date = datetime.datetime.strptime(now_date,'%Y%m%d')
+		now_date = str(now_date - datetime.timedelta(days=1)).replace('-','')[:8]
 
 		path     = '/v1/klines?symbol=' + symbol + '&interval=' + interval + '&date=' + now_date
 		response = requests.get(endPoint + path)
